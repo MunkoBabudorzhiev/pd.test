@@ -292,7 +292,7 @@ a:hover {
 .btn__blue {
 	background: var(--blue);
 	color: #fff;
-	border: 1px solid var(--blue);
+	border: 2px solid var(--blue);
 	&:hover {
 		background: #fff;
 		color: var(--blue);
@@ -301,7 +301,7 @@ a:hover {
 .btn__white {
 	background: #fff;
 	color: var(--blue);
-	border: 1px solid var(--blue);
+	border: 2px solid var(--blue);
 	&:hover {
 		background: var(--blue);
 		color: #fff;
@@ -310,7 +310,9 @@ a:hover {
 .grid {
 	display: grid;
 }
-
+.flex {
+	display: flex;
+}
 .item__subtitle {
 	margin-bottom: 1.5em;
 	font-size: .875em;
@@ -641,6 +643,7 @@ a:hover {
 		}
 	}
 }
+
 .more {
 	width: 54px;
 	height: 54px;
@@ -650,14 +653,66 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 }
-.audit__block,
-.dev__block,
-.outsource__block {
-	grid-template-columns: repeat(2, 1fr);
-	padding: 7.5em 0;
+.audit,
+.dev,
+.outsource {
+	.section__block {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1.875em;
+		padding-bottom: 7.5em;
+		.item__title {
+			margin-bottom: 1.85em;
+		}
+		.item__desc {
+			margin-bottom: 1.25em;
+		}
+		.item__more {
+			margin-bottom: 3em;
+			color: #B8BFD3;
+		}
+		.item__btn {
+			display: flex;
+		}
+		.btn__common {
+			font-weight: bold;
+			padding: 1.125em 2em;
+			&:first-child {
+				margin-right: 19px;
+			}
+		}
+	}
+}
+.audit {
+	.section__block {
+		padding-top: 7.5em;
+	}
+}
+.dev {
+	.block__content {
+		order: 1;
+	}
+	.block__img {
+		order: 2;
+	}
+}
+.banner__img {
+	height: 560px;
+	width: 100%;
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 }
 
-
+@media(max-width: 1230px) {
+	.main__img {
+		img {
+			left: 0;
+		}
+	}
+}
 @media(max-width: 1199px) {
 	body {
 		font-size: 14px;
@@ -834,6 +889,19 @@ a:hover {
 		padding: 1em 0;
 		grid-column: 12 span;
 	}
+	.audit,
+	.dev,
+	.outsource {
+		.section__block {
+			grid-gap: 1.25;
+			padding-bottom: 3em;
+		}
+	}
+	.audit {
+		.section__block {
+			padding-top: 3em;
+		}
+	}
 }
 
 @media(max-width: 576px) {
@@ -854,6 +922,27 @@ a:hover {
 	}
 	.edges__block {
 		padding: 2em 0;
+	}
+	.audit,
+	.dev,
+	.outsource {
+		.section__block {
+			grid-template-columns: 1fr;
+			grid-gap: 1.25;
+			.item__btn {
+				justify-content: center;
+			}
+		}
+	}
+
+
+	.dev {
+		.block__content {
+			order: 2;
+		}
+		.block__img {
+			order: 1;
+		}
 	}
 }
 @media(max-width: 376px) {

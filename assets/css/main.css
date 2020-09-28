@@ -279,7 +279,7 @@ a:hover {
 .btn__blue {
   background: var(--blue);
   color: #fff;
-  border: 1px solid var(--blue);
+  border: 2px solid var(--blue);
 }
 
 .btn__blue:hover {
@@ -290,7 +290,7 @@ a:hover {
 .btn__white {
   background: #fff;
   color: var(--blue);
-  border: 1px solid var(--blue);
+  border: 2px solid var(--blue);
 }
 
 .btn__white:hover {
@@ -301,6 +301,12 @@ a:hover {
 .grid {
   display: -ms-grid;
   display: grid;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .item__subtitle {
@@ -767,12 +773,89 @@ a:hover {
           align-items: center;
 }
 
-.audit__block,
-.dev__block,
-.outsource__block {
+.audit .section__block,
+.dev .section__block,
+.outsource .section__block {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  padding: 7.5em 0;
+  grid-gap: 1.875em;
+  padding-bottom: 7.5em;
+}
+
+.audit .section__block .item__title,
+.dev .section__block .item__title,
+.outsource .section__block .item__title {
+  margin-bottom: 1.85em;
+}
+
+.audit .section__block .item__desc,
+.dev .section__block .item__desc,
+.outsource .section__block .item__desc {
+  margin-bottom: 1.25em;
+}
+
+.audit .section__block .item__more,
+.dev .section__block .item__more,
+.outsource .section__block .item__more {
+  margin-bottom: 3em;
+  color: #B8BFD3;
+}
+
+.audit .section__block .item__btn,
+.dev .section__block .item__btn,
+.outsource .section__block .item__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.audit .section__block .btn__common,
+.dev .section__block .btn__common,
+.outsource .section__block .btn__common {
+  font-weight: bold;
+  padding: 1.125em 2em;
+}
+
+.audit .section__block .btn__common:first-child,
+.dev .section__block .btn__common:first-child,
+.outsource .section__block .btn__common:first-child {
+  margin-right: 19px;
+}
+
+.audit .section__block {
+  padding-top: 7.5em;
+}
+
+.dev .block__content {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.dev .block__img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.banner__img {
+  height: 560px;
+  width: 100%;
+}
+
+.banner__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 1230px) {
+  .main__img img {
+    left: 0;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -959,6 +1042,15 @@ a:hover {
     padding: 1em 0;
     grid-column: 12 span;
   }
+  .audit .section__block,
+  .dev .section__block,
+  .outsource .section__block {
+    grid-gap: 1.25;
+    padding-bottom: 3em;
+  }
+  .audit .section__block {
+    padding-top: 3em;
+  }
 }
 
 @media (max-width: 576px) {
@@ -981,6 +1073,30 @@ a:hover {
   }
   .edges__block {
     padding: 2em 0;
+  }
+  .audit .section__block,
+  .dev .section__block,
+  .outsource .section__block {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 1.25;
+  }
+  .audit .section__block .item__btn,
+  .dev .section__block .item__btn,
+  .outsource .section__block .item__btn {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .dev .block__content {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .dev .block__img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 

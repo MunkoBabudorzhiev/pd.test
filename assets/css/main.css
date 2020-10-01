@@ -85,7 +85,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   font-size: 16px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 ul[class],
@@ -242,6 +242,10 @@ a:hover {
 .link:active {
   text-decoration: none;
   color: var(--brown-color);
+}
+
+.blue {
+  color: var(--blue);
 }
 
 .btn__block {
@@ -590,14 +594,10 @@ a:hover {
 }
 
 .mission__block {
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-  grid-gap: 95px;
   padding: 4em 0;
 }
 
 .mission__content {
-  grid-column: 6 span;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -622,10 +622,6 @@ a:hover {
 .mission__content .block__more {
   color: #B8BFD3;
   font-weight: 500;
-}
-
-.mission__slider {
-  grid-column: 6 span;
 }
 
 .mission__slider .swiper-slide {
@@ -654,7 +650,7 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
-  padding: 7.5em 4em 8em 4em;
+  padding: 6em 4em 8em 4em;
   color: var(--grey);
   font-style: italic;
 }
@@ -854,7 +850,8 @@ a:hover {
 
 .usefull .section__block,
 .feedback .section__block,
-.clients .section__block {
+.clients .section__block,
+.check .section__block {
   padding: 5em 0;
 }
 
@@ -1069,6 +1066,71 @@ a:hover {
   width: 100%;
 }
 
+.check {
+  position: relative;
+}
+
+.check__block {
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  grid-gap: 15px;
+}
+
+.check__form, .check__content {
+  grid-column: 6 span;
+}
+
+.check__img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.check__content .h2 {
+  line-height: 1.5;
+}
+
+.check__form .form__group:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.check__form input {
+  padding: 1em 0;
+  width: 443px;
+  border: none;
+  border-bottom: 1px solid var(--blue);
+}
+
+.check__form input::-webkit-input-placeholder {
+  color: var(--blue);
+}
+
+.check__form input:-ms-input-placeholder {
+  color: var(--blue);
+}
+
+.check__form input::-ms-input-placeholder {
+  color: var(--blue);
+}
+
+.check__form input::placeholder {
+  color: var(--blue);
+}
+
+.check__form button {
+  width: 207px;
+  height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 1230px) {
   .main__img img {
     left: 0;
@@ -1120,11 +1182,6 @@ a:hover {
     left: 0;
     display: block;
   }
-  .mission__block {
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
-    grid-gap: 30px;
-  }
   .mission__content {
     grid-column: 6 span;
   }
@@ -1139,6 +1196,15 @@ a:hover {
     -ms-grid-columns: (1fr)[12];
         grid-template-columns: repeat(12, 1fr);
     grid-gap: 30px;
+  }
+  .check__block {
+    grid-gap: 45px;
+  }
+  .check__form input {
+    width: 100%;
+  }
+  .check__content {
+    padding-right: 50px;
   }
 }
 
@@ -1219,12 +1285,24 @@ a:hover {
   .main__form .form__group {
     margin-bottom: 1.5em;
   }
+  .usefull .section__block,
+  .feedback .section__block,
+  .clients .section__block,
+  .check .section__block {
+    padding: 3em 0;
+  }
   .edges__block {
     padding: 2.5em 0 3em;
+  }
+  .feedback__slide {
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
   .main__block {
     grid-gap: 45px;
     min-height: auto;
@@ -1239,12 +1317,6 @@ a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  .mission__content {
-    grid-column: 1 span;
-  }
-  .mission__slider {
-    grid-column: 1 span;
   }
   .mission__slider .slide__block {
     padding: 3em 3em 4em 3em;
@@ -1267,6 +1339,30 @@ a:hover {
   }
   .audit .section__block {
     padding-top: 3em;
+  }
+  .check__block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-right: 50px !important;
+  }
+  .check__form {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .check__content {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    padding-right: 0;
+  }
+  .check__img img {
+    width: 200px;
   }
 }
 
@@ -1314,6 +1410,12 @@ a:hover {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  .check__block {
+    padding-right: 30px;
+  }
+  .check__img {
+    width: 100px;
   }
 }
 

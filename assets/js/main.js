@@ -11,6 +11,10 @@ $(document).ready(function () {
 		$(this).children('.dropdown__block').removeClass('active')
 	});
 
+	$(".navbar-toggler").click((function () {
+		$(".navbar-toggler .nav__icon, .navbar__collapse").toggleClass("open");
+	}));
+
 	var mySwiper = new Swiper('.mission .swiper-container', {
 		direction: 'horizontal',
 		loop: true,

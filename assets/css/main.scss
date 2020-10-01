@@ -708,7 +708,8 @@ a:hover {
 .usefull, 
 .feedback,
 .clients,
-.check {
+.check,
+.faq {
 	.section__block {
 		padding: 5em 0;
 	}
@@ -783,6 +784,7 @@ a:hover {
 		}
 	}
 	.item__list {
+		background: #fff;
 		padding: 1.5em 2em;
 		border-left: 1px solid #B8BFD3;
 		border-right: 1px solid #B8BFD3;
@@ -873,17 +875,14 @@ a:hover {
 .check {
 	position: relative;
 }
-.check__block {
-	grid-template-columns: repeat(12, 1fr);
-	grid-gap: 15px;
-}
-.check__form, .check__content {
-	grid-column: 6 span;
-}
 .check__img {
 	position: absolute;
 	bottom: 0;
 	right: 0;
+}
+.check__block {
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 124px;
 }
 .check__content {
 	.h2 {
@@ -898,11 +897,16 @@ a:hover {
 	}
 	input {
 		padding: 1em 0;
-		width: 443px;
+		width: 100%;
 		border: none;
 		border-bottom: 1px solid var(--blue);
 
 		&::placeholder {
+			color: var(--blue);
+		}
+		&:active,
+		&:focus,
+		&:focus-within {
 			color: var(--blue);
 		}
 	}
@@ -915,6 +919,66 @@ a:hover {
 		align-items: center;
 	}
 }
+
+.faq {
+	background: var(--blue);
+	color: #fff;
+}
+.faq__block {
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 124px;
+}
+.faq__content {
+	display: flex;
+	justify-content: flex-end;
+	.block__title {
+		line-height: 1.5;
+		.h2 {
+			margin-bottom: 30px;
+		}
+		max-width: 375px;
+	}
+}
+.faq__form {
+	.form__group {
+		max-width: 445px;
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+	}
+
+	input {
+		padding: 1em 0;
+		border: none;
+		border-bottom: 1px solid #fff;
+		background: inherit;
+		width: 100%;
+		&::placeholder {
+			color: #fff;
+		}
+		&:active,
+		&:focus,
+		&:focus-within {
+			color: inherit;
+		}
+	}
+	button {
+		width: 207px;
+		height: 62px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: none;
+		color: inherit;
+		border: 1px solid #fff;
+	}
+	.inherit {
+		font-size: .875em;
+		color: rgba(255,255,255,.5);
+	}
+}
+
+
 
 
 @media(max-width: 1230px) {
@@ -977,18 +1041,15 @@ a:hover {
 		grid-gap: 30px;
 	}
 	.check__block {
-		grid-gap: 45px;
-	}
-	.check__form {
-		input {
-			width: 100%;
-		}
+		grid-gap: 30px;
 	}
 	.check__content {
 		padding-right: 50px;
 	}
+	.faq__block {
+		grid-gap: 30px;
+	}
 }
-
 @media(max-width: 992px) {
 	.h1 {
 		font-size: 2.5em;
@@ -1020,13 +1081,22 @@ a:hover {
 		transition: all .3s ease-out;
 		visibility: hidden;
 		z-index: 4;
-		&.active {
+		&.open {
 			opacity: 1.0;
 			top: 100%;
 			visibility: visible;
 		}
 	}
-
+	.dropdown {
+		.dropdown__block {
+			min-width: 100%;
+			display: flex;
+			justify-content: center;
+			&.active {
+				position: static;
+			}
+		}
+	} 
 	.navbar__nav {
 		flex-direction: column;
 	}
@@ -1051,9 +1121,12 @@ a:hover {
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
-		padding: 1em;
+		padding: 0;
 		border: none;
 		background: inherit;
+	}
+	.header__item {
+		padding: 1em 0;
 	}
 	.main__block {
 		min-height: auto;
@@ -1066,11 +1139,14 @@ a:hover {
 			margin-bottom: 1.5em;
 		}
 	}
-
+	.banner__img {
+		height: 400px;
+	}
 	.usefull,
 	.feedback,
 	.clients,
-	.check {
+	.check,
+	.faq {
 		.section__block {
 			padding: 3em 0;
 		}
@@ -1083,7 +1159,6 @@ a:hover {
 		width: 100%;
 	}
 }
- 
 @media(max-width: 768px) {
 	body {
 		font-size: 12px;
@@ -1093,6 +1168,9 @@ a:hover {
 		min-height: auto;
 		padding: 2em 0;
 	}
+	.banner__img {
+		height: 340px;
+	} 
 	.mission__block {
 		width: 100%;
 		display: flex;
@@ -1129,12 +1207,17 @@ a:hover {
 		}
 	}
 	.check__block {
-		display: flex;
-		flex-direction: column;
+		grid-template-columns: 1fr;
 		padding-right: 50px !important;
+		grid-gap: 0;
 	}
 	.check__form {
 		order: 1;
+		.form__group {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
 	}
 	.check__content {
 		order: 0;
@@ -1145,8 +1228,21 @@ a:hover {
 			width: 200px;
 		}
 	}
+	.faq__block {
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
+	.faq__content {
+		justify-content: flex-start;
+	}
+	.faq__form {
+		.form__group {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+	}	
 }
-
 @media(max-width: 576px) {
 	.main__block {
 		grid-gap: 30px;
@@ -1162,6 +1258,9 @@ a:hover {
 			width: 100%;
 			height: auto;
 		}
+	}
+	.banner__img {
+		height: 270px;
 	}
 	.edges__block {
 		padding: 2em 0;

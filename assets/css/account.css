@@ -1,0 +1,172 @@
+.account {
+  padding: 5em 0;
+}
+
+.account .section__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.account__block {
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  grid-gap: 30px;
+}
+
+.account__aside {
+  grid-column: 3 span;
+}
+
+.aside__item:hover .aside__link, .aside__item.active .aside__link {
+  background: var(--blue);
+  color: #fff;
+}
+
+.aside__item .aside__link {
+  display: block;
+  padding: 1.25em;
+  border-top: 1px solid #CFCFCF;
+  border-left: 1px solid #CFCFCF;
+  border-right: 1px solid #CFCFCF;
+}
+
+.aside__item:last-child .aside__link {
+  border-bottom: 1px solid #CFCFCF;
+}
+
+.account__content {
+  display: none;
+}
+
+.account__content.active {
+  grid-column: 9 span;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.account__info {
+  width: 100%;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 126px;
+          column-gap: 126px;
+}
+
+.account__info .info__item {
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--light);
+  margin-bottom: 1.75em;
+}
+
+.account__info .label {
+  color: var(--light);
+  margin-bottom: 10px;
+}
+
+.account__docs {
+  width: 80%;
+}
+
+.account__docs .docs__item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+.account__docs .docs__title a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  min-height: 32px;
+  padding-left: 44px;
+}
+
+.account__docs .docs__title a:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 24px;
+  height: 32px;
+}
+
+.account__docs .docs__title a[href$=".pdf"]:before {
+  content: url(../img/icons/File.svg);
+}
+
+.account__docs .docs__title a[href$=".docx"]:before, .account__docs .docs__title a[href$=".txt"]:before, .account__docs .docs__title a[href$=".doc"]:before, .account__docs .docs__title a[href$=".rtf"]:before {
+  content: url(../img/icons/doc.svg);
+}
+
+.account__docs .docs__title a[href$=".xls"]:before, .account__docs .docs__title a[href$=".xlsx"]:before, .account__docs .docs__title a[href$=".xlsm"]:before, .account__docs .docs__title a[href$=".ods"]:before {
+  content: "";
+}
+
+.account__docs .docs__title a[href$=".zip"]:before, .account__docs .docs__title a[href$=".rar"]:before, .account__docs .docs__title a[href$=".zip"]:before, .account__docs .docs__title a[href$=".tar"]:before, .account__docs .docs__title a[href$=".zipx.sit"]:before, .account__docs .docs__title a[href$=".sitx"]:before {
+  content: "";
+}
+
+.account__docs .docs__title a[href$=".jpg"]:before, .account__docs .docs__title a[href$=".jpeg"]:before, .account__docs .docs__title a[href$=".png"]:before, .account__docs .docs__title a[href$=".tif"]:before, .account__docs .docs__title a[href$=".svg"]:before, .account__docs .docs__title a[href$=".gif"]:before {
+  content: "";
+}
+
+@media (max-width: 1199px) {
+  .account__info {
+    -webkit-column-gap: 30px;
+            column-gap: 30px;
+  }
+  .account__docs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .account {
+    padding: 3em 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .account__block {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .account__aside {
+    grid-column: 1 span;
+  }
+  .account__content {
+    grid-column: 1 span;
+  }
+  .account__info {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 30px;
+            column-gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .account__info {
+    padding: 0 1em;
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+/*# sourceMappingURL=account.css.map */

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.css">
+	<title>PD-24</title>
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/account.css">
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="header__block grid">
+				<div class="header__item header__logo">
+					<div class="logo">
+						<a href="/" class="link"><img src="assets/manager/img/logo.png" alt="[[+pagetitle]]"></a>
+					</div>
+				</div>
+				<div class="header__item header__nav">
+					<nav class="navbar__expand">
+						<button class="navbar-toggler" type="button">
+							<span class="nav__icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</button>
+						<div class="navbar__collapse">
+							<ul class="navbar__nav">
+								<li class="nav__item first"><a href="#" class="nav__link">О сервисе</a></li>
+								<li class="nav__item dropdown">
+									<a href="#" class="nav__link link">Услуги
+										<span class="dropdown__mark">
+											<svg width="8" height="5" xmlns="http://www.w3.org/2000/svg">
+												<path fill="#263341" clip-rule="evenodd" d="M7.35 0L8 .699 4 5 0 .699.65 0 4 3.603 7.35 0z">
+												</path>
+											</svg>
+										</span>
+									</a>
+									<div class="dropdown__block">
+										<ul class="dropdown__nav">
+											<li><a href="" class="nav__link">Luxe</a></li>
+											<li><a href="" class="nav__link">Suit</a></li>
+											<li><a href="" class="nav__link">Superior</a></li>
+											<li><a href="" class="nav__link">Double</a></li>
+										</ul>
+									</div>
+
+								</li>
+								<li class="nav__item"><a href="#" class="nav__link">Отзывы</a></li>
+								<li class="nav__item"><a href="#" class="nav__link">Информация</a></li>
+								<li class="nav__item last"><a href="#" class="nav__link">Контакты</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="header__item header__auth">
+					<div class="auth__item search__item">
+
+						<form id="id_fsmt_top" name="fsmt" class="form__search" action="[[~[[+landing]]]]" method="[[+method]]">
+							<input type="hidden" name="from" id="from">
+							<input type="text" value="" class="form-control search__field" placeholder="Поиск по сайту"
+								autocomplete="off" aria-label="search" name="[[+searchIndex]]" id="[[+searchIndex]]">
+							<span class="search__icon">
+								<img src="assets/img/icons/search.svg" alt="search">
+							</span>
+						</form>
+					</div>
+					<div class="auth__item login__item">
+						<a data-toggle="modal" data-target="#login" class="link__icon">
+							<span class="auth__icon account__icon">
+								<img src="assets/img/icons/account.svg" alt="">
+							</span>
+						</a>
+						<a data-toggle="modal" data-target="#login" class="link">Войти</a>
+					</div>
+					<div class="auth__item callback__item">
+						<button data-toggle="modal" data-target="#callback" class="btn__common btn__blue">Заказать звонок</button>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal__header">
+							<div class="modal__title">
+								<p class="h5">Вход</p>
+							</div>
+							<div class="modal__close">
+								<button data-dismiss="modal" class="btn__common" aria-label="Close"><img
+										src="assets/img/icons/Close Icon.svg" alt="close"></button>
+							</div>
+						</div>
+						<div class="modal__body">
+							<form action="" class="auth__form">
+								<div class="form__group">
+									<label for="useremail">Email</label>
+									<div class="form__input">
+										<input type="email" class="form__control" name="useremail" id="useremail"
+											placeholder="Email пользователя">
+										<span class="icon"><img src="assets/img/icons/Message.svg" alt=""></span>
+									</div>
+								</div>
+								<div class="form__group">
+									<label for="userpass">Пароль</label>
+									<div class="form__input">
+										<input type="password" class="form__control" name="userpass" id="userpass">
+										<span class="icon"><img src="assets/img/icons/Lock.svg" alt="password"></span>
+									</div>
+								</div>
+								<div class="form__group form__text">
+									<p><a href="" class="link">Забыли пароль?</a></p>
+								</div>
+								<div class="form__group">
+									<button type="submit" class="btn__common btn__blue">Войти</button>
+								</div>
+								<div class="form__group form__text">
+									<p>Нет аккаунта? <a href="" class="text__link">Создать</a></p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="callback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal__header">
+							<div class="modal__title">
+								<p class="h5">Заказать звонок</p>
+							</div>
+							<div class="modal__close">
+								<button data-dismiss="modal" class="btn__common" aria-label="Close"><img
+										src="assets/img/icons/Close Icon.svg" alt="close"></button>
+							</div>
+						</div>
+						<div class="modal__body">
+							<form action="" class="auth__form">
+								<div class="form__group">
+									<label for="useremail">Email</label>
+									<div class="form__input">
+										<input type="email" class="form__control" name="useremail" id="useremail"
+											placeholder="Email пользователя">
+										<span class="icon"><img src="assets/img/icons/Message.svg" alt=""></span>
+									</div>
+								</div>
+								<div class="form__group">
+									<label for="userpass">Пароль</label>
+									<div class="form__input">
+										<input type="password" class="form__control" name="userpass" id="userpass">
+										<span class="icon"><img src="assets/img/icons/Lock.svg" alt="password"></span>
+									</div>
+								</div>
+								<div class="form__group form__text">
+									<p><a href="" class="link">Забыли пароль?</a></p>
+								</div>
+								<div class="form__group">
+									<button type="submit" class="btn__common btn__blue">Войти</button>
+								</div>
+								<div class="form__group form__text">
+									<p>Нет аккаунта? <a href="" class="text__link">Создать</a></p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="section__item account">
+		<div class="container">
+			<div class="section__title">
+				<div class="block__title">
+					<p class="h2">Личный кабинет</p>
+				</div>
+				<div class="block__subtitle">
+					<p class="p">Ваш тариф: <a href="" class="link blue">Тариф</a></p>
+				</div>
+			</div>
+			<div class="section__block account__block grid">
+				<aside class="account__aside">
+					<nav class="aside__nav">
+						<ul class="aside__list">
+							<li class="aside__item"><a href="" class="aside__link">Профиль</a></li>
+							<li class="aside__item"><a href="" class="aside__link">Документы</a></li>
+							<li class="aside__item"><a href="" class="aside__link">Услуги</a></li>
+							<li class="aside__item"><a href="" class="aside__link">Тариф</a></li>
+							<li class="aside__item active"><a href="" class="aside__link">История оплаты</a></li>
+							<li class="aside__item"><a href="" class="aside__link">Выйти</a></li>
+						</ul>
+					</nav>
+				</aside>
+				<div class="account__content">
+					<div class="account__info">
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+						<div class="info__item">
+							<p class="label">Имя</p>
+							<p class="title">Иван</p>
+						</div>
+					</div>
+					
+				</div>
+				<div class="account__content">
+					<div class="account__docs">
+						<div class="docs__block">
+							<div class="block__subtitle">
+								<p class="p">Разработка документации 13 сентября в 14:40</p>
+							</div>
+							<div class="docs__item">
+								<div class="docs__title">
+									<a href="fdsf/dfdjsfhjdsf.pdf" class="link">Политика обработки ПДн</a>
+								</div>
+								<a class="dosc__icon"><img src="assets/img/icons/download.svg" alt=""></a>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="account__content active">
+					<div class="account__story">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section__item faq">
+		<div class="container">
+			<div class="section__block faq__block grid">
+
+				<div class="faq__content">
+					<div class="block__title">
+						<p class="h2">Остались вопросы?</p>
+						<p class="p">Оставьте заявку, наши специалисты свяжуться
+							с вами в ближайшее время и ответят на все интересуеющие Вас вопросы.</p>
+					</div>
+				</div>
+				<div class="faq__form">
+					<form action="">
+						<div class="form__group">
+							<input type="text" name="inn" placeholder="Введите имя">
+						</div>
+						<div class="form__group">
+							<input type="phone" name="innphone" placeholder="Введите номер телефона">
+						</div>
+						<div class="form__group">
+							<button type="submit" class="btn__common">Отправить</button>
+						</div>
+						<div class="form__group">
+							<p class="p inherit">Нажимая на кнопку, Вы соглашаетесь с обработкой персональных данных</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="footer__block grid">
+				<div class="footer__item footer__logo">
+					<p class="p"><a href="/" class="link">&copy; PD-24 2020</a></p>
+				</div>
+				<div class="footer__item footer__rights">
+					<p class="p"><a href="" class="link">Политика конфиденциальности</a></p>
+				</div>
+				<div class="footer__item footer__contacts">
+					<p class="p"><a href="tel:[[++phone]]" class="link">8(800)511-27-25</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/node_modules/jquery/dist/jquery.js"></script>
+	<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="/node_modules/swiper/swiper-bundle.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>

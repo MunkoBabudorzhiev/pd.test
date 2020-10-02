@@ -1,0 +1,156 @@
+.account {
+	padding: 5em 0;
+	.section__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.account__block {
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 30px;
+}
+.account__aside {
+	grid-column: 3 span;
+}
+
+.aside__item {
+	&:hover,
+	&.active {
+		.aside__link {
+			background: var(--blue);
+			color: #fff;
+		}
+	}
+	.aside__link {
+		display: block;
+		padding: 1.25em;
+		border-top: 1px solid #CFCFCF;
+		border-left: 1px solid #CFCFCF;
+		border-right: 1px solid #CFCFCF;
+	}
+	&:last-child {
+		.aside__link {
+			border-bottom: 1px solid #CFCFCF;
+		}
+	}
+}
+.account__content {
+	display: none;
+}
+.account__content.active {
+	grid-column: 9 span;
+	display: flex;
+}
+.account__info {
+	width: 100%;
+	column-count: 2;
+	column-gap: 126px;
+	.info__item {
+		padding-bottom: 1em;
+		border-bottom: 1px solid var(--light);
+		margin-bottom: 1.75em;
+	}
+	.label {
+		color: var(--light);
+		margin-bottom: 10px;
+	}
+}
+
+.account__docs {
+	width: 80%;
+	.docs__item {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1.5em;
+	}
+	.docs__title {
+		a {
+			display: flex;
+			align-items: center;
+			position: relative;
+			min-height: 32px;
+			padding-left: 44px;
+			
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: inline-block;
+				width: 24px;
+				height: 32px;
+			}
+			&[href$=".pdf"]:before {
+				content: url(../img/icons/File.svg);
+			}
+			&[href$=".docx"]:before,
+			&[href$=".txt"]:before,
+			&[href$=".doc"]:before,
+			&[href$=".rtf"]:before {
+				content: url(../img/icons/doc.svg);
+			}
+			&[href$=".xls"]:before,
+			&[href$=".xlsx"]:before,
+			&[href$=".xlsm"]:before,
+			&[href$=".ods"]:before {
+				content: "";
+			}
+	
+			&[href$=".zip"]:before,
+			&[href$=".rar"]:before,
+			&[href$=".zip"]:before,
+			&[href$=".tar"]:before,
+			&[href$=".zipx.sit"]:before,
+			&[href$=".sitx"]:before {
+				content: "";
+			}
+	
+			&[href$=".jpg"]:before,
+			&[href$=".jpeg"]:before,
+			&[href$=".png"]:before,
+			&[href$=".tif"]:before,
+			&[href$=".svg"]:before,
+			&[href$=".gif"]:before {
+				content: "";
+			}
+		}
+	}
+}
+
+@media(max-width: 1199px) {
+	.account__info {
+		column-gap: 30px;
+	}
+	.account__docs {
+		width: 100%;
+	}
+}
+@media(max-width: 992px) {
+	.account {
+		padding: 3em 0;
+	}
+	
+}
+@media(max-width: 768px) {
+	.account__block {
+		grid-template-columns: 1fr;
+	}
+	.account__aside {
+		grid-column: 1 span;
+	}
+	.account__content {
+		grid-column: 1 span;
+	}
+	.account__info {
+		column-count: 2;
+		column-gap: 30px;
+	}
+}
+
+@media(max-width: 576px) {
+	.account__info {
+		padding: 0 1em;
+		column-count: 1;
+	}
+}

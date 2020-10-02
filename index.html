@@ -56,39 +56,110 @@
 				</div>
 				<div class="header__item header__auth">
 					<div class="auth__item search__item">
-						<span class="auth__icon">
-							<img src="assets/img/icons/search.svg" alt="поиск по сайту">
-						</span>
-						<form action="" method="" class="search__form msearch2">
-							<input class="form-control ui-autocomplete-input" type="search" name="query" placeholder="Поиск по сайту"
-								aria-label="Search" value="" autocomplete="off">
-							
+
+						<form id="id_fsmt_top" name="fsmt" class="form__search" action="[[~[[+landing]]]]" method="[[+method]]">
+							<input type="hidden" name="from" id="from">
+							<input type="text" value="" class="form-control search__field" placeholder="Поиск по сайту" autocomplete="off"
+								aria-label="search" name="[[+searchIndex]]" id="[[+searchIndex]]">
+							<span class="search__icon">
+								<img src="assets/img/icons/search.svg" alt="search">
+							</span>
 						</form>
 					</div>
 					<div class="auth__item login__item">
-						<a data-toggle="modal" data-target="#privateRoom" class="link">
+						<a data-toggle="modal" data-target="#login" class="link__icon">
 							<span class="auth__icon account__icon">
 								<img src="assets/img/icons/account.svg" alt="">
 							</span>
-							Войти
 						</a>
+						<a data-toggle="modal" data-target="#login" class="link">Войти</a>
 					</div>
 					<div class="auth__item callback__item">
 						<button data-toggle="modal" data-target="#callback" class="btn__common btn__blue">Заказать звонок</button>
 					</div>
 				</div>
 			</div>
-			<div class="modal fade" id="callback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
+			<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
 					<div class="modal-content">
-						
+						<div class="modal__header">
+							<div class="modal__title">
+								<p class="h5">Вход</p>
+							</div>
+							<div class="modal__close">
+								<button data-dismiss="modal" class="btn__common" aria-label="Close"><img src="assets/img/icons/Close Icon.svg" alt="close"></button>
+							</div>
+						</div>
+						<div class="modal__body">
+							<form action="" class="auth__form">
+								<div class="form__group">
+									<label for="useremail">Email</label>
+									<div class="form__input">
+										<input type="email" class="form__control" name="useremail" id="useremail" placeholder="Email пользователя">
+										<span class="icon"><img src="assets/img/icons/Message.svg" alt=""></span>
+									</div>
+								</div>
+								<div class="form__group">
+									<label for="userpass">Пароль</label>
+									<div class="form__input">
+										<input type="password" class="form__control" name="userpass" id="userpass">
+										<span class="icon"><img src="assets/img/icons/Lock.svg" alt="password"></span>
+									</div>
+								</div>
+								<div class="form__group form__text">
+									<p><a href="" class="link">Забыли пароль?</a></p>
+								</div>
+								<div class="form__group">
+									<button type="submit" class="btn__common btn__blue">Войти</button>
+								</div>
+								<div class="form__group form__text">
+									<p>Нет аккаунта? <a href="" class="text__link">Создать</a></p>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
+			<div class="modal fade" id="callback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
 					<div class="modal-content">
-
+						<div class="modal__header">
+							<div class="modal__title">
+								<p class="h5">Заказать звонок</p>
+							</div>
+							<div class="modal__close">
+								<button data-dismiss="modal" class="btn__common" aria-label="Close"><img
+										src="assets/img/icons/Close Icon.svg" alt="close"></button>
+							</div>
+						</div>
+						<div class="modal__body">
+							<form action="" class="auth__form">
+								<div class="form__group">
+									<label for="useremail">Email</label>
+									<div class="form__input">
+										<input type="email" class="form__control" name="useremail" id="useremail"
+											placeholder="Email пользователя">
+										<span class="icon"><img src="assets/img/icons/Message.svg" alt=""></span>
+									</div>
+								</div>
+								<div class="form__group">
+									<label for="userpass">Пароль</label>
+									<div class="form__input">
+										<input type="password" class="form__control" name="userpass" id="userpass">
+										<span class="icon"><img src="assets/img/icons/Lock.svg" alt="password"></span>
+									</div>
+								</div>
+								<div class="form__group form__text">
+									<p><a href="" class="link">Забыли пароль?</a></p>
+								</div>
+								<div class="form__group">
+									<button type="submit" class="btn__common btn__blue">Войти</button>
+								</div>
+								<div class="form__group form__text">
+									<p>Нет аккаунта? <a href="" class="text__link">Создать</a></p>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -109,7 +180,7 @@
 							<input type="phone" class="form__item form__input form__item" placeholder="Введите номер телефона">
 						</div>
 						<div class="form__btn">
-							<button type="submit" class="btn__common btn__blue form__item">Отправить заявку</button>
+							<button type="submit" class="btn__common btn__blue">Отправить заявку</button>
 						</div>
 					</form>
 				</div>
@@ -123,36 +194,38 @@
 	</section>
 	<section class="section__item mission">
 		<div class="container">
-			<div class="section__block mission__block row">
-				<div class="col-lg-6 col-12">
-					<div class="block__item mission__content">
-						<div class="block__subtitle">
-							<p class="grey">Наша основная задача</p>
-						</div>
-						<div class="block__title">
-							<p class="h2">Поможем в организации защиты персональных данных.</p>
-						</div>
-						<div class="block__content">
-							<p class="p">Юридические лица, как операторы персональных данных, обязаны выполнить требования, возложенные на них законодательством в области защиты персональных данных.</p>
-							<p class="p">Выполнить требования законодательства РФ в области персональных данных Вам поможет наш сервис.</p>
-						</div>
-						<div class="block__more">
-							<p class="grey"><span class="triangle">&#9205;</span> Узнать больше о сервисе</p>
+			<div class="section__block mission__block">
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<div class="block__item mission__content">
+							<div class="block__subtitle">
+								<p class="grey">Наша основная задача</p>
+							</div>
+							<div class="block__title">
+								<p class="h2">Поможем в организации защиты персональных данных.</p>
+							</div>
+							<div class="block__content">
+								<p class="p">Юридические лица, как операторы персональных данных, обязаны выполнить требования, возложенные на них законодательством в области защиты персональных данных.</p>
+								<p class="p">Выполнить требования законодательства РФ в области персональных данных Вам поможет наш сервис.</p>
+							</div>
+							<div class="block__more">
+								<p class="grey"><span class="triangle">&#9205;</span> Узнать больше о сервисе</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-6 col-12">
-					<div class="block__item mission__slider">
-						<div class="swiper-container">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="slide__block">
-										<p class="p">Правоотношения в сфере персональных данных регулируются федеральным законодательством РФ (Федеральный Закон от 27.07.2006 г. № 152-ФЗ «О персональных данных»), Трудовым кодексом РФ (глава 14), а
-										также Гражданским кодексом РФ.</p>
+					<div class="col-lg-6 col-12">
+						<div class="block__item mission__slider">
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="slide__block">
+											<p class="p">Правоотношения в сфере персональных данных регулируются федеральным законодательством РФ (Федеральный Закон от 27.07.2006 г. № 152-ФЗ «О персональных данных»), Трудовым кодексом РФ (глава 14), а
+											также Гражданским кодексом РФ.</p>
+										</div>
 									</div>
 								</div>
+								<div class="swiper-pagination"></div>
 							</div>
-							<div class="swiper-pagination"></div>
 						</div>
 					</div>
 				</div>
@@ -545,7 +618,19 @@
 	</section>
 
 	<footer>
-
+		<div class="container">
+			<div class="footer__block grid">
+				<div class="footer__item footer__logo">
+					<p class="p"><a href="/" class="link">&copy; PD-24 2020</a></p>
+				</div>
+				<div class="footer__item footer__rights">
+					<p class="p"><a href="" class="link">Политика конфиденциальности</a></p>
+				</div>
+				<div class="footer__item footer__contacts">
+					<p class="p"><a href="tel:[[++phone]]" class="link">8(800)511-27-25</a></p>
+				</div>
+			</div>
+		</div>
 	</footer>
 
 

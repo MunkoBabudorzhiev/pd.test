@@ -23,6 +23,16 @@ $(document).ready(function () {
 			el: '.mission .swiper-pagination',
 		},
 	})
+
+	var mySwiper = new Swiper('.base .swiper-container', {
+		direction: 'horizontal',
+		loop: true,
+		slidesPerView: 1,
+		pagination: {
+			el: '.base .swiper-pagination',
+		},
+	})
+
 	var mySwiper = new Swiper('.feedback .swiper-container', {
 		direction: 'horizontal',
 		loop: true,

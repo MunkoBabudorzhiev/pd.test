@@ -7,11 +7,11 @@
 	}
 }
 .account__block {
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 30px;
 }
 .account__aside {
-	grid-column: 3 span;
+	grid-column: 1 span;
 }
 
 .aside__item {
@@ -39,7 +39,7 @@
 	display: none;
 }
 .account__content.active {
-	grid-column: 9 span;
+	grid-column: 3 span;
 	display: flex;
 }
 .account__info {
@@ -130,7 +130,15 @@
 	.account {
 		padding: 3em 0;
 	}
-	
+	.account__block {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.account__aside {
+		grid-column: 1 span;
+	}
+	.account__content.active {
+		grid-column: 2 span;
+	}
 }
 @media(max-width: 768px) {
 	.account__block {
@@ -139,12 +147,15 @@
 	.account__aside {
 		grid-column: 1 span;
 	}
-	.account__content {
+	.account__content.active {
 		grid-column: 1 span;
 	}
 	.account__info {
 		column-count: 2;
 		column-gap: 30px;
+	}
+	.story__table {
+		border: 1px solid #CFCFCF;
 	}
 }
 

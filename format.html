@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+[[$head]]
+
+<body>
+	[[$header]]
+	<section class="audit">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="demo">
+						<div class="demo_alert">Это пробная версия "Онлайн Аудит"</div>
+						[[!+modx.user.username:is=`(anonymous)`:then=`<div class="demo_info">Возможность приобретения полной версии
+							"Онлай Аудит" достпуна только для авторизированных пользователей.<br> Пожалуйста <a href="#"
+								data-toggle="modal" data-target="#loginModal">авторизируйтесь</a>.</div> `:else=`<button type="button"
+							class="btn btn-success" data-toggle="modal" data-target="#pay" style="margin-top: 10px;">Преобрести полную
+							версию</button>`]]
+					</div>
+					<div class="hello">
+						<div class="text"><span style="font-weight: bold">Онлайн аудит</span> на предмет соответствия обработки
+							персональных данных требованиям законодательства РФ необходимо провести во всех подразделениях организаци,
+							в которых обрабатываются персональные данные работников, клиентов контрагентов (кадры, бухгалтерия,
+							делопроизводство, IT-отдел, юридический отдел, архив, профильные отделы и т.д.). Онлайн аудит реализован
+							по средствам тестирования, которое проходят специалисты аудируемой компании. По итогам онлайн аудита
+							сервис предоставляет результаты тестов, Акт, в котором отражены выявленные нарушения, а также сервис
+							предоставляет рекомендации, в случае выявленных нарушений. </div>
+						<div class="form-group">
+							<input class="form-control" id="org_name" type="text" value=""
+								placeholder="Введите условное или реальное наименование организации">
+						</div>
+						<button type="button" class="btn btn-primary" id="start">Начать</button>
+					</div>
+					<div class="buttons d-none">
+						<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#history">История</button>
+						<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#act">Акт</button>
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#recom">Рекомендации</button>
+					</div>
+					[[!getImageList?
+					&tvname=`audit`
+					&tpl=`audit_tpl`
+					]]
+				</div>
+			</div>
+		</div>
+	</section>
+	[[!+modx.user.username:is=`(anonymous)`:then=``:else=`[[!AjaxForm?
+	&snippet=`FormIt`
+	&form=`pay_сallback_tpl`
+	&hooks=`FormItSaveForm,email`
+	&emailTpl=`pay_callback_send`
+	&emailSubject=`Заявка с сайта [[++site_name]]`
+	&emailTo=`[[++email]]`
+	&emailFrom=`[[++mail_smtp_user]]`
+	&validate=`email:required, name:required`
+	&validationErrorMessage=`Пожалуйста заполните правильно все поля формы`
+	&successMessage=`Спасибо! Ваша заявка успешно отправлена.`
+	]]`]]
+
+	<div class="modal fade" id="history" tabindex="-1" role="dialog" aria-labelledby="historyModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="historyModal">История</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="history_body"></div>
+				<div id="editor"></div>
+				<div class="modal-footer">
+					<button class="btn btn-success history-pdf">Скачать в PDF</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="act" tabindex="-1" role="dialog" aria-labelledby="actModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="actModal" style="color:#d39e00;">Акт</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="act_body"></div>
+				<div class="modal-footer">
+					<button class="btn btn-success act-pdf">Скачать в PDF</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="recom" tabindex="-1" role="dialog" aria-labelledby="recomModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="recomModal" style="color:#17a2b8;">Рекомендации</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="recom_body"></div>
+				<div class="modal-footer">
+					<button class="btn btn-success recom-pdf">Скачать в PDF</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	[[$footer]]
+	[[$audit_demo_scripts]]
+</body>
+
+</html>

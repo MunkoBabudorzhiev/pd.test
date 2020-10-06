@@ -323,6 +323,9 @@ a:hover {
 .block__subtitle {
   margin-bottom: 1.5em;
   font-size: .875em;
+}
+
+.block__subtitle .grey {
   color: var(--light);
 }
 
@@ -1602,8 +1605,8 @@ header {
 }
 
 .anketa__block {
-  -ms-grid-columns: 730px 259px;
-      grid-template-columns: 730px 259px;
+  -ms-grid-columns: 1fr 259px;
+      grid-template-columns: 1fr 259px;
   grid-auto-rows: auto;
   grid-row-gap: 30px;
   grid-column-gap: 125px;
@@ -1718,9 +1721,79 @@ header {
   /* focus style */
 }
 
-.promo__aside .promo__block {
+.promo__aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.promo__block {
   background: var(--blue);
-  height: 588px;
+  color: #fff;
+  padding: 35px 15px;
+}
+
+.promo__text {
+  text-align: center;
+}
+
+.promo__text p {
+  font-size: 52px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.promo__text p:nth-child(2) {
+  opacity: .9;
+}
+
+.promo__text p:nth-child(3) {
+  opacity: .8;
+}
+
+.promo__text p:nth-child(4) {
+  opacity: .7;
+}
+
+.promo__text p:nth-child(5) {
+  opacity: .3;
+}
+
+.promo__text p:nth-child(6) {
+  opacity: .2;
+}
+
+.promo__title {
+  text-align: center;
+  font-size: 96px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.promo__title p {
+  line-height: 1;
+}
+
+.promo__title span {
+  font-size: 24px;
+}
+
+.promo__desc {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.promo__btn .btn__white {
+  width: 100%;
+  padding: 1em 0;
 }
 
 footer {
@@ -1826,6 +1899,9 @@ footer {
   }
   .faq__block {
     grid-gap: 30px;
+  }
+  .anketa__block {
+    grid-column-gap: 30px;
   }
 }
 
@@ -2022,6 +2098,21 @@ footer {
   .faq__form .form__group:not(:last-child) {
     margin-bottom: 30px;
   }
+  .anketa__block {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .promo__block {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-gap: 15px;
+  }
+  .promo__text {
+    grid-row: span 3;
+  }
   .footer__block {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -2147,6 +2238,16 @@ footer {
   }
   .check__img {
     width: 100px;
+  }
+  .promo__block {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+  .promo__text {
+    grid-row: span 1;
   }
 }
 
